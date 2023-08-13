@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header bg-warning">
+    order details
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-3">Product</div>
+      <div class="col-md-3">Quantity </div>
+      <div class="col-md-3">Cost</div>
+      <div class="col-md-3">Action</div>
+    </div>
+    <div class="card" *ngFor = "let product of products">
+
+      <!-- <app-placed-product-list [product] = "product" (removeProductFromCartById) = "removeProductFromCart($event)"></app-placed-product-list> -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3" href="#" [routerLink] = "['/products/' ,product.id]">{{product.title}}</div>
+          <div class="col-md-3">{{product.pivot.quantity}} </div>
+          <div class="col-md-3">{{product.cost * product.pivot.quantity}}</div>
+          <a (click) = "remove(product.id)" class="col-md-3">remove</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

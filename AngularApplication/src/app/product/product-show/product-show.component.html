@@ -1,0 +1,21 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" src="https://images-platform.99static.com/9VnLZVJjXMdwbbFHEbzKQCgmQvY=/3x3:2000x2000/500x500/top/smart/99designs-contests-attachments/83/83179/attachment_83179164" alt="Card image cap">
+        </div>
+        <div class="col-md-8">
+            <h3>{{product?.title}}</h3>
+            <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            <hr>
+            <p>{{product?.description}}</p>
+            <button type="button" class="btn btn-info" (click) = "addToCart()" *ngIf = "addedToCart === false">Add To Cart</button> &nbsp;
+            <button type="button" class="btn btn-info" [routerLink] = "['/cart']" *ngIf = "addedToCart === true">Go To Cart</button> &nbsp;
+            <button type="button" class="btn btn-warning" [routerLink] = "['/buy/', product?.id]">Buy Now</button>
+        </div>
+    </div>
+</div>

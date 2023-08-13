@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<a class="navbar-brand" [routerLink]="['/home']">Ecommerce</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		<div class="navbar-nav">
+			<a class="nav-item nav-link active" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" *ngIf = "loggedIn" [routerLink]="['/cart']">Cart</a>
+      <a class="nav-item nav-link" *ngIf = "loggedIn" [routerLink]="['/orders']">order</a>
+
+    </div>
+
+  </div>
+  <div class="navbar-nav" style="left: auto; right: 0px;">
+    <a class="nav-item nav-link" *ngIf = "loggedIn" (click) = "logout()">logout</a>
+    <a class="nav-item nav-link" *ngIf = "!loggedIn" [routerLink]="['/user/signin']">login</a>
+  </div>
+</nav>

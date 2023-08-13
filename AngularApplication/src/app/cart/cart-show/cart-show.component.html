@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Shopping Cart</h1>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card border-warning">
+        <div>
+          <div *ngIf = "isCartEmpty" class="container">
+            <em>Cart Is Emply..</em>
+          </div>
+          <app-cart-product-list *ngIf = "!isCartEmpty" [products] = "products" (removeProduct) = remove($event)></app-cart-product-list>
+        </div>
+      </div> <br>
+      <em *ngIf = "!isAddressSelected && !isCartEmpty" style="float: right">Please select a address</em>
+      <div class="card border-info" *ngIf = "isAddressSelected">
+        <div class="card-header bg-info">Selected Address</div>
+        <div class="card-body">
+          <span>Street: </span><span>{{selectedAddress.street}}</span><br>
+          <span>City: </span><span>{{selectedAddress.city}}</span>&nbsp;
+          <span>State:</span><span>{{selectedAddress.state}}</span><br>
+          <span>Pin Code: </span> <span>{{selectedAddress.pincode}}</span><br>
+          <span>Phone Number: </span> <span>{{selectedAddress.phone_number}}</span>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-info" (click) = "placeOrder()">Place Order</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" *ngIf = "!isCartEmpty">
+        <div class="card-header bg-warning">Total Amount</div>
+        <div class="card-body">{{total}}</div>
+        <button class="btn btn-info" (click) = "toggleAddressPanel()" *ngIf = "!isCartEmpty">Select Address</button>
+      </div>
+      <app-address-home *ngIf="!isAddressPanelHidden" (setAddress) = setAddress($event)></app-address-home>
+    </div>
+  </div>
+</div>

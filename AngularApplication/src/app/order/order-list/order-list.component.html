@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor = "let order of orders">
+        <!-- loop here for all orders -->
+        <div class="card border-warning" (click) = "getorderDetailsById(order)">
+          <div class="card-body" [class.bg-warning] = "selectedOrder?.id === order.id">
+            Order Id: {{order.id}} <br>
+            Placed on: {{order.created_at | date}} <br>
+            Order Total: {{order.total}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div>
+        <app-order-show *ngIf = "isOrderSelected" [orderId] = "selectedOrder?.id" [total] = "selectedOrder?.total" [products] = "orderDetail?.products" [address] = "orderDetail?.address"></app-order-show>
+      </div>
+    </div>
+  </div>
+</div>

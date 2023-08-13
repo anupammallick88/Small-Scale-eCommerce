@@ -1,0 +1,7 @@
+<div class="card-body">
+  <div class="row">
+    <div class="col-md-4" [routerLink] = "['/products/' ,product?.id]">{{product.title}}</div>
+    <div class="col-md-4">{{product?.pivot?.quantity}} </div>
+    <div class="col-md-4">{{product.cost * product?.pivot?.quantity}}</div>
+  </div>
+</div>

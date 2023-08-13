@@ -1,0 +1,19 @@
+<form [formGroup] = "signupForm" (ngSubmit) = "SignUp(signupForm.value)" autocomplete="off">
+	<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" formControlName="name" name="name" class="form-text" id="name" placeholder="Name">
+		</div>
+	<div class="form-group">
+		<label for="email">Email Address</label>
+		<input type="text" class="form-control" formControlName="email" name="email" class="form-text" id="email" placeholder="Email Address">
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" class="form-control" formControlName="password" name="password" class="form-text" id="password" placeholder="Email Address">
+	</div>
+	<div class="form-group">
+		<label for="password_confirmation">Confirm Password</label>
+		<input type="password" class="form-control" formControlName="password_confirmation" name="password_confirmation" class="form-text" id="confirm password" placeholder="Email Address">
+	</div>
+	<button class="btn btn-info">SignUp</button>
+</form>

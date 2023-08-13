@@ -1,0 +1,31 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-9"> -->
+            <div class="row">
+                <div class="col-md-4" *ngFor = "let product of products">
+                    <app-product-thumbnail [product] = "product"></app-product-thumbnail>
+                    <!-- <div class="card" style="margin-top: 15px">
+                            <img class="card-img-top" src="https://images-platform.99static.com/9VnLZVJjXMdwbbFHEbzKQCgmQvY=/3x3:2000x2000/500x500/top/smart/99designs-contests-attachments/83/83179/attachment_83179164" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="products/{{product.id}}">{{product.title}}</a>  &nbsp;
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </h5>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Cost: </small> <em>${{product.cost}}</em>
+                                <button class="btn btn-info btn-sm" style="float: right;" (click) = "addToCart()" *ngIf = "addedToCart === false">Add to cart</button>
+                                <button class="btn btn-info btn-sm" style="float: right;" *ngIf = "addedToCart === true">Go to cart</button>
+                            </div>
+                        </div> -->
+                </div>
+            </div>
+        <!-- </div>
+    </div>
+</div> -->

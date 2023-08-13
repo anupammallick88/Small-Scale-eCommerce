@@ -1,0 +1,13 @@
+<div>
+  <form [formGroup] = "loginForm" (ngSubmit) = "login(loginForm.value)" autocomplete="off">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="text" formControlName="email" name="email" class="form-text" id="email" placeholder="Email Address">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" name="password" class="form-text" id="password" placeholder="Email Address">
+    </div>
+    <button class="btn btn-info">Login</button>
+  </form>
+</div>

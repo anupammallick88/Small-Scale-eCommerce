@@ -1,0 +1,37 @@
+<!-- <div class="card">
+    <div class="row">
+        <div class="col-md-3">
+            <img class="card-img img-responsive" src="https://images-platform.99static.com/9VnLZVJjXMdwbbFHEbzKQCgmQvY=/3x3:2000x2000/500x500/top/smart/99designs-contests-attachments/83/83179/attachment_83179164" alt="Card image cap">
+        </div>
+        <div class="col-md-9">
+            <div class="card-body">
+                <div class="card-title">
+                    {{product.title}}
+                </div>
+                <div class="card-text" style="overflow: hidden; width: auto; white-space: nowrap; text-overflow:ellipsis;">
+                    {{product.description}}
+                    <span style="float: right;">Cost: ${{product.cost}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="card" style="margin-top: 15px">
+    <img class="card-img-top" src="https://images-platform.99static.com/9VnLZVJjXMdwbbFHEbzKQCgmQvY=/3x3:2000x2000/500x500/top/smart/99designs-contests-attachments/83/83179/attachment_83179164" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title"><a href="products/{{product.id}}">{{product.title}}</a>  &nbsp;
+        <!-- <p class="card-text">{{product.description}}</p> -->
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+        </h5>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">Cost: </small> <em>${{product.cost}}</em>
+        <button class="btn btn-info btn-sm" style="float: right;" (click) = "addToCart()" *ngIf = "addedToCart === false">Add to cart</button>
+        <button class="btn btn-info btn-sm" style="float: right;" *ngIf = "addedToCart === true" [routerLink] = "['/cart']">Go to cart</button>
+    </div>
+</div>

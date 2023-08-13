@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+
+        <div class="list-group list-group-flush">
+            <a (click) = "sendCategoryId('all')" class="list-group-item list-group-item-action list-group-item-light fill" width = "100%">All Products</a>
+            <div class="col-xs-12" *ngFor="let category of categories">
+                <a (click) = "getCategory(category.id)" class="list-group-item list-group-item-action list-group-item-light fill" width = "100%">{{category.name}}</a>
+            </div>
+        </div>
+    </div>
+</div>

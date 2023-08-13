@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <ul class="list-group list-group-horizontal-lg">
+            <li class="list-group-item" (click) = "section = 'login'">Login</li>
+            <li class="list-group-item" (click) = "section = 'signup'">Signup</li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <app-login-form *ngIf = "section === 'login'"></app-login-form>
+          <app-registration-form *ngIf = "section === 'signup'"></app-registration-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

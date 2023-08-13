@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="card border-info">
+    <div class="card-header bg-info">
+        Order Id: {{orderId}}
+    </div>
+    <div class="row card-body">
+      <div class="col-md-4">Product</div>
+      <div class="col-md-4">Quantity</div>
+      <div class="col-md-4">Cost</div>
+    </div>
+    <hr>
+
+    <div *ngFor = "let product of products">
+      <!-- <app-placed-product-list [product] = "product"></app-placed-product-list> -->
+      <app-order-product-list [product] = "product"></app-order-product-list>
+    </div>
+    <hr>
+    <div class="card-body">
+      <p>Delivered To:</p>
+        <span>Street: </span><span>{{address?.street}}</span><br>
+        <span>City: </span><span>{{address?.city}}</span>&nbsp;
+        <span>State:</span><span>{{address?.state}}</span><br>
+        <span>Pin Code: </span> <span>{{address?.pincode}}</span><br>
+        <span>Phone Number: </span> <span>{{address?.phone_number}}</span>
+    </div>
+    <div class="card-footer">
+      Total Paid: {{total}}
+    </div>
+
+  </div>
+</div>

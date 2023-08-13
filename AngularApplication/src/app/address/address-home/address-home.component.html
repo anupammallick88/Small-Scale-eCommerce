@@ -1,0 +1,17 @@
+<div class="card">
+	<div class="card-header">
+		Select Address
+	</div>
+	<div class="card-body">
+		<div *ngIf = "addressMode === 'select'">
+			<div *ngFor="let address of address">
+				<app-address-list [address] = "address" (getSelectedAddress) = "SelectedAddress($event)"></app-address-list>
+			</div>
+		</div>
+		<app-address-create *ngIf = "addressMode === 'create'" (createAddressValues) = "createAddress($event)"></app-address-create>
+	</div>
+	<div class="card-footer">
+		<button (click) = "addressMode = 'create'" class="btn btn-warning" *ngIf = "addressMode === 'select'">Create New Address</button>
+		<button (click) = "addressMode = 'select'" class="btn btn-warning" *ngIf="addressMode === 'create'">Select Address</button>
+	</div>
+</div>
